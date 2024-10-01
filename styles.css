@@ -1,4 +1,4 @@
-
+/* Navbar Styles */
 .navbar-nav {
     display: flex; 
     align-items: center; 
@@ -20,21 +20,22 @@
 }
 
 .nav-item .nav-link {
-    color: black; /* Default text color */
-    text-decoration: none;
+    color: black; 
 }
 
 .nav-item .nav-link:hover {
-    color: black; /* Color on hover */
-    font-weight: bold;
+    color: black; 
+    font-weight: bold; 
 }
 
+/* Avatar Styles */
 .avatar {
     width: 40px; 
     height: 40px;
     border-radius: 50%; 
 }
 
+/* Button Styles */
 .button {
     outline: none;
     border: none;
@@ -48,62 +49,44 @@
     height: auto;
     display: inline-block;
     outline: none;
-    border: none;
-    background: none;
 }
 
 .image_button img {
     transition: transform 0.3s ease, border 0.3s ease;
     border-radius: 8px;
-    border: 2px solid transparent; /* Initial border */
-  }
+    border: 2px solid transparent; 
+}
 
-  .image_button:hover img {
+.image_button:hover img {
     transform: scale(1.05); 
-    border: 2px solid #ff4500; 
-  }
+    border: 2px solid #ff4500;
+}
 
-#increase_order_quantity_button {
+/* Quantity Buttons */
+#increase_order_quantity_button,
+#decrease_order_quantity_button {
     color: orange;
     background-color: rgb(235, 235, 235);
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     width: 33%;
     text-align: center;
     border-radius: 8px;
-    border: 2px solid transparent; /* Initially transparent */
+    border: 2px solid transparent; 
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
+}
 
-  #increase_order_quantity_button:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    background-color: #ff4500; /* Change background color on hover */
-    color: white; /* Change text color on hover */
-    border-color: orange; /* Change border color on hover */
-  }
+#increase_order_quantity_button:hover,
+#decrease_order_quantity_button:hover {
+    transform: scale(1.1);
+    background-color: #ff4500;
+    color: white;
+    border-color: orange; 
+}
 
-  #decrease_order_quantity_button {
-    color: orange;
-    background-color: rgb(235, 235, 235);
-    padding: 0px;
-    margin: 0px;
-    width: 33%;
-    text-align: center;
-    border-radius: 8px;
-    border: 2px solid transparent; /* Initially transparent */
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-
-  #decrease_order_quantity_button:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    background-color: #ff4500; /* Change background color on hover */
-    color: white; /* Change text color on hover */
-    border-color: orange; /* Change border color on hover */
-  }
-
-  #add_to_cart_button {
+/* Add to Cart Button */
+#add_to_cart_button {
     width: 100%;
     height: 100%;
     background-color: orange;
@@ -111,27 +94,24 @@
     font-size: small;
     text-align: center;
     color: black;
-    /* padding: 10px; */
-    border: orange; 
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-  }
+}
 
-  /* Hover effect */
-  #add_to_cart_button:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    background-color: white; /* Change background to white */
-     /* Change text color to orange */
-    border-color: orange; /* Keep the border orange */
-    
+/* Add to Cart Button Hover Effect */
+#add_to_cart_button:hover {
+    transform: scale(1.05); 
+    background-color: white; 
+    border-color: orange; 
+}
 
-  }
+/* Cart Icon Hover Effect */
+.cart-button:hover .cart-icon path {
+    fill: orange;
+}
 
-
-
-
-
-   #image_modal_button {
+/* Image Modal Button */
+#image_modal_button {
     padding: 0;
     margin: 0;
     border-radius: 15px;
@@ -139,126 +119,109 @@
     background: none;
     cursor: pointer;
     transition: transform 0.3s ease, border 0.3s ease;
-  }
+}
 
-  #image_modal_button img {
+#image_modal_button img {
     border-radius: 15px;
     transition: transform 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent; /* Initial border */
-  }
+    border: 2px solid transparent; 
+}
 
-  #image_modal_button:hover img {
-    transform: scale(1.05); /* Slight zoom on hover */
-    border: 2px solid #ff4500; /* Change border color on hover */
-  }
+#image_modal_button:hover img {
+    transform: scale(1.05); 
+    border: 2px solid #ff4500;
+}
 
-   #modal_right_arrow_button {
+/* Modal Arrow Buttons */
+#modal_right_arrow_button,
+#modal_left_arrow_button {
     color: white;
     background-color: transparent;
     border: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     outline: none;
     cursor: pointer;
-  }
+}
 
-  #modal_right_arrow_button svg {
+#modal_right_arrow_button svg,
+#modal_left_arrow_button svg {
     transition: transform 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
-  }
+}
 
-  #modal_right_arrow_button:hover svg {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
+#modal_right_arrow_button:hover svg,
+#modal_left_arrow_button:hover svg {
+    transform: scale(1.1); 
+}
 
-  #modal_right_arrow_button:hover circle {
-    fill: #ff4500; /* Change circle background color on hover */
-  }
+#modal_right_arrow_button:hover circle,
+#modal_left_arrow_button:hover circle {
+    fill: #ff4500; 
+}
 
-  #modal_right_arrow_button:hover polyline {
-    stroke: white; /* Change arrow color on hover */
-  }
-  
-  #modal_left_arrow_button svg {
-    transition: transform 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
-  }
+#modal_right_arrow_button:hover polyline,
+#modal_left_arrow_button:hover polyline {
+    stroke: white; 
+}
 
-  #modal_left_arrow_button:hover svg {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
+/* Cart Modal Styles */
+.modal-dialog {
+    margin-top: 0; 
+    margin-right: 20px; 
+}
 
-  #modal_left_arrow_button:hover circle {
-    fill: #ff4500; /* Change circle background color on hover */
-  }
-
-  #modal_left_arrow_button:hover polyline {
-    stroke: white; /* Change arrow color on hover */
-  }
-
-
-
-  /* cart modal */
-
-  .modal-dialog {
-    margin-top: 0; /* Remove default top margin */
-    margin-right: 20px; /* Add right margin for spacing */
-    /* padding-left: 50%; */
-  }
-  .cart-item {
+.cart-item {
     display: flex;
     align-items: center;
-  }
-  .cart-item-details {
+}
+
+.cart-item-details {
     margin-left: 10px;
-  }
-  .cart-item-details p {
-    margin: 0;
-  }
-  .modal-footer {
+}
+
+.cart-item-details p {
+    margin: 0; 
+}
+
+.modal-footer {
     justify-content: space-between;
-  }
-
-
-
-
+}
 
 
 .div {
     border: none;
 }
+
 .main_col {
-    width: 45%;
+    width: 45%; 
 }
 
+/* Image Row */
 #image_row {
     width: 95%;
-    align-items: start;
+    align-items: start; 
 }
-#image1_button_div {
-    padding: 0px;
-}
-#image2_button_div {
-    padding: 0px;
-}
-#image3_button_div {
-    padding: 0px;
-}
+
+/* Image Button Divs */
+#image1_button_div,
+#image2_button_div,
+#image3_button_div,
 #image4_button_div {
-    padding: 0px;
+    padding: 0px; 
 }
 
-
+/* Cart Container for Notification */
 .cart-container {
-  position: relative;
-  display: inline-block;
+    position: relative; 
+    display: inline-block;
 }
 
 .cart {
-   position: absolute;
-  top: -8px; 
-  right: -8px; 
-  color: red; 
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1;
+    position: absolute;
+    top: -8px; 
+    right: -8px; 
+    color: red; 
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1; 
 }
-
