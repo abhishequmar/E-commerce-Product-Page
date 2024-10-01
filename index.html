@@ -28,7 +28,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <title>Ecommerece</title>
+    <title>Ecommerce</title>
   </head>
   <body>
     <!-- Navbar -->
@@ -70,6 +70,7 @@
       </div>
       <!-- Right-aligned cart and avatar, visible on all screen sizes -->
       <div class="d-flex align-items-center ml-auto">
+        <button id="view_cart_button" style="border: none; padding: 0px; margin: 0px">
         <a class="nav__cart-icon mr-3" href="#">
           <div class="cart-container">
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -82,6 +83,7 @@
             <span class="cart"><p id= "cart_quantity" p>0</p></span>
           </div>
         </a>
+        </button>
         <img src="avatar.png" alt="Avatar" class="avatar" />
       </div>
     </nav>
@@ -178,7 +180,7 @@
             <h8 style="font-weight: bold">$125</h8>
           </div>
           <div class="col">
-            <a style="font-weight: bold; color: white; background-color: black">50%</a>
+            <a style="font-weight: bold; color: white; background-color: black">-50%</a>
           </div>
         </div>
         <div class="row" style="padding-top: 5%; padding-left: 5%">
@@ -198,15 +200,6 @@
             >
               <button
                 id="decrease_order_quantity_button"
-                style="
-                  color: orange;
-                  background-color: rgb(235, 235, 235);
-                  padding: 0px;
-                  margin: 0px;
-                  width: 33%;
-                  text-align: center;
-                  border-radius: 8px;
-                "
               >
                 -
               </button>
@@ -217,15 +210,6 @@
               >
               <button
                 id="increase_order_quantity_button"
-                style="
-                  color: orange;
-                  background-color: rgb(235, 235, 235);
-                  padding: 0px;
-                  margin: 0px;
-                  width: 33%;
-                  text-align: center;
-                  border-radius: 8px;
-                "
               >
                 +
               </button>
@@ -233,6 +217,7 @@
           </div>
           <div class="col-6">
             <button
+              id="add_to_cart_button"
               style="
                 width: 100%;
                 background-color: orange;
@@ -251,7 +236,7 @@
 </div>
 
 
-    <!-- Modal-->
+    <!-- Lightbox Modal-->
     <div
       class="modal fade"
       id="imageModal"
@@ -373,6 +358,42 @@
       </div>
       
     </div>
+
+    <!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" style="padding-left: 50%; padding-bottom: 15%;">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Product summary -->
+        <div class="cart-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="images/image-product-1-thumbnail.jpg" alt="Product Image" class="img-thumbnail" style="width: 50px; height: 50px;"/>
+            <div class="cart-item-details ml-2">
+              <p>Product Name: Fall Limited Edition Sneakers</p>
+              <p>Quantity: <span id="modal_quantity">0</span></p>
+              <p>Price: $<span id="modal_price">00.00</span></p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger btn-sm" id="remove_item_button">Remove</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" style="background-color: orange;">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
   </body>
   <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

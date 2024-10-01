@@ -4,10 +4,12 @@ const image2_button = document.getElementById("image2");
 const image3_button = document.getElementById("image3");
 const image4_button = document.getElementById("image4");
 const image_modal_button = document.getElementById("image_modal_button");
+const view_cart_button = document.getElementById("view_cart_button");
+const add_to_cart = document.getElementById("add_to_cart");
 
 // Modal
 var myModal = new bootstrap.Modal(document.getElementById("imageModal"));
-
+var cartModal = new bootstrap.Modal(document.getElementById("cartModal"));
 
 // Modal Buttons
 const modal_image1_button = document.getElementById("modal_image1");
@@ -20,6 +22,7 @@ const modal_left_arrow_button = document.getElementById(
 const modal_right_arrow_button = document.getElementById(
   "modal_right_arrow_button"
 );
+const remove_item_button = document.getElementById("remove_item_button");
 
 // image urlarray
 const images = [
@@ -29,14 +32,12 @@ const images = [
   "images/image-product-4.jpg",
 ];
 
-
 // cur image being displayed
 var current_modal_image_index = 0;
 
 // No. of shoes ordered
 var order_quantity = 0;
-
-
+var cart_quantity = 0;
 
 const decrease_button = document.getElementById(
   "decrease_order_quantity_button"
@@ -44,9 +45,6 @@ const decrease_button = document.getElementById(
 const increase_button = document.getElementById(
   "increase_order_quantity_button"
 );
-
-
-
 
 // Image Event Listeners
 
@@ -68,7 +66,9 @@ image4_button.addEventListener("click", function () {
 image_modal_button.addEventListener("click", function () {
   myModal.show();
 });
-
+view_cart_button.addEventListener("click", function () {
+  cartModal.show();
+});
 
 // Modal Event Listeners
 
@@ -106,8 +106,6 @@ modal_right_arrow_button.addEventListener("click", function () {
     images[current_modal_image_index];
 });
 
-
-
 decrease_button.addEventListener("click", function () {
   order_quantity -= 1;
   order_quantity = Math.max(order_quantity, 0);
@@ -117,7 +115,18 @@ decrease_button.addEventListener("click", function () {
 increase_button.addEventListener("click", function () {
   order_quantity += 1;
   document.getElementById("order_quantity").innerText = order_quantity;
-  document.getElementById("cart_quantity").innerText = order_quantity;
 });
 
+add_to_cart_button.addEventListener("click", function () {
+  cart_quantity = order_quantity;
+  document.getElementById("modal_quantity").innerText = cart_quantity;
+  document.getElementById("modal_price").innerText = 125 * cart_quantity;
+  document.getElementById("cart_quantity").innerText = cart_quantity;
+});
 
+remove_item_button.addEventListener("click", function () {
+  cart_quantity = 0;
+  document.getElementById("modal_quantity").innerText = cart_quantity;
+  document.getElementById("modal_price").innerText = 125 * cart_quantity;
+  document.getElementById("cart_quantity").innerText = cart_quantity;
+});
